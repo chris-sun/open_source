@@ -23,11 +23,11 @@ for line in handle:
       line_count += 1
       artist = m.group(2)
 
-      if artist_hash.has_key(artist):
+      if artist in artist_hash:
         artist_hash[artist] += 1
       else:
         artist_hash[artist] = 1
 
-for w in sorted(artist_hash, key=artist_hash.get, reverse=True):
-  print w, artist_hash[w]
+for a in sorted(artist_hash, key=artist_hash.get, reverse=True):
+  print(a, artist_hash[a])
 
