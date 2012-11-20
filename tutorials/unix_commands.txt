@@ -1,0 +1,5 @@
+# Creating a symbolic link
+ln -s REAL_LOCATION SYM_LINK
+
+# Using sed to replace all instances of OLD_TEXT with NEW_STUFF
+grep -l -R OLD_TEXT * | xargs sed -i "" 's/OLD_TEXT/NEW_STUFF/g'
