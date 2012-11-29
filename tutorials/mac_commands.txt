@@ -1,0 +1,25 @@
+launchctl
+The launchctl command (pronounced “launch control”) sets up programs to run automatically according to a schedule or other rules. It is similar to cron but more flexible and complex. It’s also made for the Mac whereas cron comes from a Unix/Linux background. 
+
+Launching a program requires several parts:
+A program to be launched.
+A property list or plist file that specifies how the program gets launched, written in XML.
+Specifying whether to run as an agent or a daemon. An agent is associated with a particular user and can have a graphical user interface (GUI). A daemon is not associated with a user and cannot have a GUI.
+The system service launchd, which controls all the launched programs.
+The launchctl command, a front-end to launchd, which handles plist files.
+
+To make sure the plist file has correct syntax, run the plutil command:
+ ➜ plutil -lint com.example.date.plist
+com.example.date.plist: OK
+
+NOTE to Chris.
+launchctl requires that user loading the plist file must be the file owner.
+Hence, must use "chown" to set "someuser" to be the owner of the plist file.  Lame as hell.
+
+  sudo chown someuser ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+  (Run the command below as "someuser" user
+  launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+
+To list all jobs currently loaded in launchd:
+
+  launchctl list
