@@ -1,0 +1,19 @@
+# psql is the command line tool
+psql
+
+# PSQL psql commands
+# quit
+\q
+
+# show existing databases
+select datname from pg_database;
+
+# switch to a database
+\connect some_database;
+
+# show tables in a database
+\d
+
+# create database
+CREATE DATABASE your_database_name;
+
