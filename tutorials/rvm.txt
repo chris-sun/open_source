@@ -1,0 +1,7 @@
+
+# List gemsets
+rvm gemset list
+
+# Create a gemset
+rvm use 1.9.2-head@albinochipmunk --create
+

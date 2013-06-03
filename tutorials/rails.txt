@@ -1,0 +1,7 @@
+download (clone) repository
+
+# create a gemset
+
+# create .rvmrc file
+
+bundle install

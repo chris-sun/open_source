@@ -8,7 +8,7 @@
 import sys
 
 def make_change(goal, denom, tabs=0):
-  print '%s mc(%d, %d)' % ('  ' * tabs, goal, denom)
+  #print '%s mc(%d, %d)' % ('  ' * tabs, goal, denom)
   ways = 0
   next_denom = 0
 
@@ -30,10 +30,16 @@ def make_change(goal, denom, tabs=0):
    
   return ways
 
+"""
 if len(sys.argv) > 1:
   res = make_change(int(sys.argv[1]), 25)
   print sys.argv[0] + '(' + sys.argv[1] + ') => ' + str(res)
 else:
   print 'Usage: ' + sys.argv[0] + ' NUM'
+"""
+
+for i in range(1, 118):
+  res = make_change(i, 25)
+  print sys.argv[0] + '(' + str(i) + ') => ' + str(res)
 
 
