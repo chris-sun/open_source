@@ -1,57 +1,69 @@
-#######################
+####################
 # clone cloning
-#######################
+####################
 # Cloning a public project from Github
-git clone git://github.com/chris-sun/open_source.git some_directory_name
+git clone git://github.com/twitter/bootstrap.git
+# Cloning a public project from Github and save to specific directory
+git clone git://github.com/twitter/bootstrap.git some_directory_name
 # Cloning a private project from Github
 git clone git@github.com:username/project.git
 
-# Reverting project to a previous state
-
-# Reverting file to a previous state
-#
-# ###################
+####################
 # branches
-# ###################
+####################
 # list all branches
+git branch
+# create a new branch and go to it
+git checkout -b new_branch
+# go to different branch
+git checkout the_branch
 
-##########
-# REMOTES remotes remote
-#########
-#
+# Deleting a local branch
+git branch -d the_branch_name
+# Deleting a remote branch
+git push origin :the_remote_branch
+
+####################
+# remotes remote
+####################
 # Show the list of remotes
 git remote
 # show details about a remote
 git remote show origin
 # Add a remote
 git remote add origin git@github.com:<username>/sample_app.git
-#
-# Cloning a repository from GitHub
-git clone git://github.com/twitter/bootstrap.git
-#  
-# Stashing
+
+####################
+# stash 
+####################
 git stash save "work for feature x"
 git stash list
 git stash apply
 git stash drop
 
-# Restoring file to original state
+########################################
+# revert restore reset previous state
+########################################
+# READ THIS FIRST
+http://git-scm.com/2011/07/11/reset.html
+
+# Restoring (reverting) file to previous state (last commmit)
 git checkout -- hello.rb
 git checkout HEAD hello.rb
 
-# Restoring file to specific version
-
+# Restoring (reverting) file to specific version
 # Find out version using "git log" or github.com
 git checkout 69cf529c some_file
 
-# Branching
-git branch NEW_BRANCH
-git checkout NEW_BRANCH
-# (shortcut for doing both)
-git checkout -b NEW_BRANCH
-
-# Deleting a local branch
-git branch -d the_branch_name
-# Deleting a remote branch
-git push origin :the_remote_branch
+####################
+# config Config
+####################
+# Show all configs
+git config --list
+# show specific setting
+git config user.name
+# change a setting
+git config core.filemode true
+# delete a setting
+git config --unset diff.renames
 
