@@ -67,3 +67,10 @@ git config core.filemode true
 # delete a setting
 git config --unset diff.renames
 
+####################
+# some settings I've used in the past
+# settings configs
+####################
+git config --global diff.tool opendiff
+
+

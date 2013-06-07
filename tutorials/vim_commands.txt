@@ -1,0 +1,2 @@
+# Delete all lines containing "someWordToDelete"
+:g/someWordToDelete/d
