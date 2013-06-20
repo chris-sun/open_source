@@ -40,6 +40,8 @@ git stash save "work for feature x"
 git stash list
 git stash apply
 git stash drop
+# view stash without applying it
+git stash show -p stash@{0}
 
 ########################################
 # revert restore reset previous state
