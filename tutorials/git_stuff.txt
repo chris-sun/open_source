@@ -27,7 +27,7 @@ git push origin :the_remote_branch
 # remotes remote
 ####################
 # Show the list of remotes
-git remote
+git remote -v
 # show details about a remote
 git remote show origin
 # Add a remote
@@ -68,6 +68,8 @@ git config user.name
 git config core.filemode true
 # delete a setting
 git config --unset diff.renames
+# Use a .gitconfig file
+# to set values automatically
 
 ####################
 # some settings I've used in the past

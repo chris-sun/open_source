@@ -1,2 +1,8 @@
 # Delete all lines containing "someWordToDelete"
 :g/someWordToDelete/d
+
+# Change from uppercase to lowercase
+1) Select a section using "v"
+2) Type "U" to make uppercase
+2) Type "u" to make lowercase
+2) Type "~" to toggle between upper/lower case
