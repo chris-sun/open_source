@@ -1,0 +1,4 @@
+By default, bundle will install gems in the directory specified by $GEM_HOME
+
+# Can set configurations using:
+bundle config path SOME_LOCATION

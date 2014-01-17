@@ -5,3 +5,10 @@ ln -s REAL_LOCATION SYM_LINK
 # The command below works on a Mac OS 10.7
 # May need to adjust for other O/S
 grep -l -R OLD_TEXT * | xargs sed -i "" 's/OLD_TEXT/NEW_STUFF/g'
+
+# Find the sum of a column
+awk '{ SUM += $5} END { print SUM }'
+# Find the sum when delimiter is a comma
+awk -F, '{ SUM += $5} END { print SUM }'
+# Split by pipe
+awk -F\| - split by pipe and so on
