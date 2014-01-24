@@ -1,0 +1,55 @@
+<h1>Listing locations</h1>
+
+<div>
+  <p>Enter a Postal Code (ZIP code) below, to find nearby locations</p>
+  <%= form_for :search, method: :get, url: locations_path do |f| %>
+    <%= f.label :value, 'Postal Code' %> 
+    <%= f.text_field :value %>
+    <%= f.submit 'Search' %>
+  <% end %>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th>Street1</th>
+      <th>Street2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal code</th>
+      <th>Country code</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.name %></td>
+        <td><%= location.phone_number %></td>
+        <td><%= location.street1 %></td>
+        <td><%= location.street2 %></td>
+        <td><%= location.city %></td>
+        <td><%= location.state %></td>
+        <td><%= location.postal_code %></td>
+        <td><%= location.country_code %></td>
+        <td><%= location.latitude %></td>
+        <td><%= location.longitude %></td>
+        <td><%= link_to 'Show', location %></td>
+        <td><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Location', new_location_path %>
