@@ -5,3 +5,6 @@ download (clone) repository
 # create .rvmrc file
 
 bundle install
+
+# recreate DB in command
+bundle exec rake db:drop db:create db:migrate
