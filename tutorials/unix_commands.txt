@@ -1,10 +1,20 @@
 # Creating a symbolic link
 ln -s REAL_LOCATION SYM_LINK
 
+# Sed
+# output results to stdout
+sed -E 's/old/new/' some_file.txt
+# write a new file, old file is some_file.txt.old
+sed -i '.old' 's/old/new' some_file.txt
+# replace existing file with changes
+sed -i '' 's/old/new/' some_file.txt
+
 # Using sed to replace all instances of OLD_TEXT with NEW_STUFF
 # The command below works on a Mac OS 10.7
 # May need to adjust for other O/S
 grep -l -R OLD_TEXT * | xargs sed -i "" 's/OLD_TEXT/NEW_STUFF/g'
+
+
 
 # Find the sum of a column
 awk '{ SUM += $5} END { print SUM }'
