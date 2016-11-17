@@ -12,3 +12,9 @@ awk '{ SUM += $5} END { print SUM }'
 awk -F, '{ SUM += $5} END { print SUM }'
 # Split by pipe
 awk -F\| - split by pipe and so on
+
+# Capture STDERR
+cat non_existent_file.txt 2> stderr_output.txt
+
+# Capture both STDOUT and STDERR
+cat existing.txt non_existent.txt &> stdout_stderr_output.txt
